@@ -1,0 +1,101 @@
+#include <iostream>
+using namespace std;
+
+
+
+struct Lista {
+       int idade;
+       string cpf;
+       int sexo;
+       struct Lista *prox;
+       struct Lista *ant;
+};
+
+struct Lista *primeiro=NULL;
+struct lista *ultimo=NULL;
+struct lista *aux=NULL;
+
+int cadastrar(int idade, string cpf, int sexo) {
+    Lista *novo = new Lista; 
+     novo->idade = idade;
+     novo->cpf = cpf;
+     novo->sexo = sexo;
+	  
+     if (ultimo==NULL){
+    	primeiro=novo;
+    	ultimo=novo;
+    	novo->prox=NULL;
+    	novo->ant=NULL;
+    	
+     }else { 
+     	 novo->prox=primeiro;
+         primeiro->ant=novo
+		 novo->ant=NULL;
+    	 primeiro=novo;
+		}
+
+
+}
+}
+
+int mostrar_fila(){
+	if (primeiro==NULL) {
+		cout<<"fila vazia"<<endl;
+	}else {
+		aux=primeiro;
+		while(aux!=NULL){
+			cout<<aux->cpf<<endl;
+			aux=aux->ant;
+		}
+	}
+}
+
+mostrar_proximo(){
+	cout<<novo->prox<<endl;}
+
+excluir_registro(){
+}
+
+sair(){
+}
+
+
+int main () {
+	
+	int op, idade, sexo;
+	string cpf;
+	
+	cout<<"Escolha uma opçao: "<<endl;
+		cout<<"1 - Entrar na fila."<<endl;
+		cout<<"2 - Proximo da fila."<<endl;
+		cout<<"3 - Visualizar o andamento da fila."<<endl;
+		cout<<"4 - Fechar."<<endl;
+		cin>>op;
+	
+	While(op != 4){
+		
+		Switch (op) {
+      		Case 1: 
+				cout<<"preencha seus dados: "<<endl;
+				cout<<"idade: "<<endl;
+				cin>>idade;
+				cout<<"cpf: "<<endl;
+				cin>>cpf;
+				cout<<"sexo, digite 1 - MASCULINO, ou 2 - FEMININO."<<endl;
+				cin>>sexo; 
+				cadastrar(idade, cpf, sexo);
+       			break;
+
+			Case 2: mostrar_proximo();
+       		break;
+
+      		Case 3: mostrar_fila();
+       		break;
+
+      		Case 4: sair()
+       		break;
+		}
+	}
+       
+	return 1;
+}
